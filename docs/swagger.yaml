@@ -1,0 +1,91 @@
+definitions:
+  api.Request:
+    properties:
+      key:
+        type: string
+      ttl:
+        type: integer
+      value: {}
+    type: object
+info:
+  contact: {}
+paths:
+  /delete/{key}:
+    delete:
+      description: delete key-value pair by key
+      parameters:
+      - description: Key
+        in: path
+        name: key
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Delete key-value pair
+      tags:
+      - key-value store
+  /get/{key}:
+    get:
+      description: get value associated with the key
+      parameters:
+      - description: Key
+        in: path
+        name: key
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get value by key
+      tags:
+      - key-value store
+  /set:
+    post:
+      consumes:
+      - application/json
+      description: set key-value pair with optional TTL
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/api.Request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Set key-value pair
+      tags:
+      - key-value store
+swagger: "2.0"
