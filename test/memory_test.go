@@ -11,9 +11,8 @@ func TestMemoryStore_SetAndGet(t *testing.T) {
 	memoryStore := store.NewKVStore()
 	key := "testKey"
 	value := "testValue"
-	ttl := time.Second * 10 // 10 секунд
+	ttl := time.Second * 10
 
-	// Установка значения
 	err := memoryStore.Set(key, value, ttl)
 	assert.NoError(t, err)
 
