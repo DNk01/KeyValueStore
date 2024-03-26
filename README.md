@@ -6,12 +6,12 @@ Key-value storage (redis-like) that supports Set, Get, and Delete methods and st
 
 1. Clone repository:
 
-        git clone https://github.com/yourusername/yourprojectname.git
+        git clone https://github.com/DNk01/KeyValueStore.git
 
 
 2. Go to directory:
 
-        cd yourprojectname
+        cd KeyValueStore
 
 
 3. Запустите проект:
@@ -25,4 +25,4 @@ You can use included Swagger UI to test API.
 
 1. Launch the project.
 2. Open the browser and go to the address `http://localhost:8080/swagger/index.html` (Port can be changed in server.go).
-3. Use interface Swagger UI for requests tp API.
+3. Use interface Swagger UI for requests to API.
