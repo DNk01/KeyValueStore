@@ -2,7 +2,7 @@ package api
 
 // setKey godoc
 // @Summary Set key-value pair
-// @Description set key-value pair with optional TTL
+// @Description Set a key-value pair in the store with an optional TTL (Time To Live) in seconds. If TTL is not specified, a default value of 60 seconds is used.
 // @Tags key-value store
 // @Accept json
 // @Produce json

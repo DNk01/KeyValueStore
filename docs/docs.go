@@ -91,7 +91,7 @@ const docTemplate = `{
         },
         "/set": {
             "post": {
-                "description": "set key-value pair with optional TTL",
+                "description": "Set a key-value pair in the store with an optional TTL (Time To Live) in seconds. If TTL is not specified, a default value of 60 seconds is used.",
                 "consumes": [
                     "application/json"
                 ],
@@ -109,7 +109,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/api.Request"
+                            "$ref": "#/definitions/api.SetValueRequest"
                         }
                     }
                 ],
@@ -133,8 +133,12 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "api.Request": {
+        "api.SetValueRequest": {
             "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
             "properties": {
                 "key": {
                     "type": "string"

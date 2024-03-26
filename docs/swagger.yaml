@@ -1,11 +1,14 @@
 definitions:
-  api.Request:
+  api.SetValueRequest:
     properties:
       key:
         type: string
       ttl:
         type: integer
       value: {}
+    required:
+    - key
+    - value
     type: object
 info:
   contact: {}
@@ -64,14 +67,16 @@ paths:
     post:
       consumes:
       - application/json
-      description: set key-value pair with optional TTL
+      description: Set a key-value pair in the store with an optional TTL (Time To
+        Live) in seconds. If TTL is not specified, a default value of 60 seconds is
+        used.
       parameters:
       - description: Request body
         in: body
         name: request
         required: true
         schema:
-          $ref: '#/definitions/api.Request'
+          $ref: '#/definitions/api.SetValueRequest'
       produces:
       - application/json
       responses:
