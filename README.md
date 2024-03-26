@@ -24,5 +24,5 @@ Key-value storage (redis-like) that supports Set, Get, and Delete methods and st
 You can use included Swagger UI to test API.
 
 1. Launch the project.
-2. Open the browser and go to the address `http://localhost:8080/swagger/index.html` (Port can be changed in server.go).
+2. Open the browser and go to the address `http://localhost:8080/swagger/index.html` (Port can be changed in config.yaml).
 3. Use interface Swagger UI for requests to API.
