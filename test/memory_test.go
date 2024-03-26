@@ -26,7 +26,7 @@ func TestMemoryStore_ExpiredKey(t *testing.T) {
 	memoryStore := store.NewKVStore()
 	key := "expiredKey"
 	value := "value"
-	ttl := time.Millisecond * 10
+	ttl := time.Millisecond * 100
 
 	err := memoryStore.Set(key, value, ttl)
 	assert.NoError(t, err)
