@@ -14,7 +14,7 @@ Key-value storage (redis-like) that supports Set, Get, and Delete methods and st
         cd KeyValueStore
 
 
-3. Запустите проект:
+3. Launch project:
 
         go run main.go
 
@@ -30,7 +30,7 @@ You can use included Swagger UI to test API.
 ## How it works
 
 1. HashMap for Storage: 
-The core data structure for storing key-value pairs is a hash map (or simply, a map in Go). 
+The core data structure for storing key-value pairs is a map. 
 This structure provides O(1) average time complexity for all operations (Set/Get/Delete).
 2. TTL Handling with a PriorityQueue:
 To manage the Time To Live (TTL) for each key-value pair, a priority queue is utilized. 
